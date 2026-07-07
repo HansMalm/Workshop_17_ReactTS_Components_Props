@@ -1,7 +1,8 @@
 import {Menu, Package, Search, ShoppingBag, User} from "lucide-react";
+import type { NavbarProps } from "../types";
 
 
-const Navbar = () => {
+const Navbar = ({ items, title }: NavbarProps) => {
     return (
         <header className="sticky top-0 z-40 border-b border-blue-700/30 bg-blue-600 shadow-lg shadow-blue-900/10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -12,19 +13,18 @@ const Navbar = () => {
                 className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-blue-600 shadow-md">
               <Package size={20} strokeWidth={2.5} />
             </span>
-                        <span className="text-xl tracking-tighter uppercase font-black">LITE.SHOP</span>
+                        <span className="text-xl tracking-tighter uppercase font-black">{title}</span>
                     </a>
 
                     {/*Nav links*/}
                     <nav className="hidden md:flex items-center gap-8 text-sm font-bold text-blue-100">
-                        <a className="relative transition-colors duration-200 hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-[2px] after:scale-x-0 after:origin-center after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 after:rounded-full"
-                           href="#">New Arrival</a>
-                        <a className="relative transition-colors duration-200 hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-[2px] after:scale-x-0 after:origin-center after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 after:rounded-full"
-                           href="#">Men</a>
-                        <a className="relative transition-colors duration-200 hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-[2px] after:scale-x-0 after:origin-center after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 after:rounded-full"
-                           href="#">Women</a>
-                        <a className="relative transition-colors duration-200 hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-[2px] after:scale-x-0 after:origin-center after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 after:rounded-full"
-                           href="#">Sale</a>
+
+                        {items.map((item) => (
+                            <a key={item.label} href={item.href}
+                               className="relative transition-colors duration-200 hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-[2px] after:scale-x-0 after:origin-center after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 after:rounded-full">
+                                {item.label}
+                            </a>
+                        ))}
                     </nav>
 
                     {/*Right icons*/}
