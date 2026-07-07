@@ -1,13 +1,16 @@
+import type { ProductItemProps} from "../types";
 
 
-const ProductCard = () => {
+const ProductCard = ({ product }: ProductItemProps) => {
+
+    const { image, category, name, rating, oldPrice, price, stock } = product;
+
     return (
         <article
             className="border border-slate-200 rounded-[1.25rem] bg-white p-3 transition-all duration-400 hover:border-blue-400 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 group">
             <div className="relative overflow-hidden rounded-2xl bg-slate-100">
                 <img
-                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&q=80&w=800"
-                    alt="Technical Shell Jacket"
+                    src={image} alt={name}
                     className="aspect-[4/5] w-full object-cover group-hover:scale-110 transition-transform duration-700"/>
 
                 {/*Product Overlay Actions*/}
@@ -61,7 +64,7 @@ const ProductCard = () => {
             <div className="mt-4 px-1 pb-2 space-y-1">
                 <div className="flex items-center justify-between">
                     <p className="text-[10px] font-black uppercase tracking-[0.15em] text-blue-600/70">
-                        Outerwear</p>
+                        {category}</p>
                     <div className="flex items-center gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
                              viewBox="0 0 24 24"
@@ -69,19 +72,19 @@ const ProductCard = () => {
                             <path
                                 d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
-                        <span className="text-[10px] font-bold text-slate-400">4.9</span>
+                        <span className="text-[10px] font-bold text-slate-400">{rating}</span>
                     </div>
                 </div>
                 <h3 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    Technical Shell Jacket</h3>
-                <p className="text-[11px] font-medium text-slate-500">In Stock • Ships in 2 days</p>
+                    {name}</h3>
+                <p className="text-[11px] font-medium text-slate-500">{stock}</p>
 
                 <div className="flex items-center justify-between gap-3 pt-3">
                     <div className="flex flex-col">
                                             <span
-                                                className="text-[10px] text-slate-400 line-through font-medium leading-none">1,450 kr</span>
+                                                className="text-[10px] text-slate-400 line-through font-medium leading-none">{oldPrice}</span>
                         <span
-                            className="text-lg font-black text-slate-900 tracking-tight">890 kr</span>
+                            className="text-lg font-black text-slate-900 tracking-tight">{price}</span>
                     </div>
 
                     <button type="button"

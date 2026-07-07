@@ -1,7 +1,32 @@
 import ProductCard from "./ProductCard";
+import ProductItem from "../types";
 
 
 const ProductGrid = () => {
+
+    const products: ProductItem[] = [
+        {
+            id: 1,
+            image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&q=80&w=800",
+            category: "Outerwear",
+            name: "Technical Shell Jacket",
+            rating: 4.9,
+            oldPrice: "1,450 kr",
+            price: "890 kr",
+            stock: "In Stock • Ships in 2 days"
+        },
+        {
+            id: 2,
+            image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800",
+            category: "Outerwear",
+            name: "Speedster Running Shoes",
+            rating: 4.9,
+            oldPrice: "1,450 kr",
+            price: "890 kr",
+            stock: "Only 4 items left"
+        }
+    ]
+
     return (
 
         <section className="lg:col-span-9">
@@ -35,32 +60,17 @@ const ProductGrid = () => {
 
                 {/*Product Grid*/}
                 <div id="product-grid" className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {/*Product Card 1*/}
-                    <ProductCard />
+                    {/*Product Cards*/}
+                    {products.map((product) => (
+                        <ProductCard
+                            key={product.id}
+                            product={product}
+                        />
+                    ))}
 
-                    {/*Product Card 2*/}
-                    <article
-                        className="border border-slate-200 rounded-[1.25rem] bg-white p-3 transition-all duration-400 hover:border-blue-400 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 group">
-                        <div className="relative overflow-hidden rounded-2xl bg-slate-100">
-                            <img
-                                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800"
-                                alt="Speedster Running Shoes"
-                                className="aspect-[4/5] w-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    {/*Product Card 2
 
-                            {/*Product Overlay Actions*/}
-                            <div
-                                className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                                <button type="button"
-                                        className="h-12 w-12 rounded-full bg-white text-slate-900 shadow-xl flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-500 hover:bg-blue-600 hover:text-white"
-                                        aria-label="Quick View">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                         viewBox="0 0 24 24"
-                                         fill="none" stroke="currentColor" stroke-width="2"
-                                         stroke-linecap="round"
-                                         stroke-linejoin="round">
-                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                                        <circle cx="12" cy="12" r="3"/>
-                                    </svg>
+
                                 </button>
                                 <button type="button"
                                         className="h-12 w-12 rounded-full bg-white text-slate-900 shadow-xl flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 hover:bg-blue-600 hover:text-white"

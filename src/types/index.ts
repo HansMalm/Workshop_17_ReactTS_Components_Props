@@ -7,3 +7,18 @@ export type NavbarProps = {
     items: NavItem[];
     title: string;
 };
+
+export type ProductItem = {
+    id: number;
+    image: string;
+    category: string;
+    name: string;
+    rating: number;
+    oldPrice: string;
+    price: string;
+    stock: string;
+};
+
+export type ProductItemProps = {
+    product: ProductItem;
+};

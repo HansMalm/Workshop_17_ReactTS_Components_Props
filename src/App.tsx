@@ -9,7 +9,7 @@ const App = () => {
         { label: "New Arrival", href: "#" },
         { label: "Men", href: "#" },
         { label: "Women", href: "#" },
-        { label: "Sale", href: "#" },
+        { label: "Sale", href: "#" }
 
     ];
 
