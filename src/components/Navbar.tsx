@@ -1,3 +1,4 @@
+import {Menu, Package, Search, ShoppingBag, User} from "lucide-react";
 
 
 const Navbar = () => {
@@ -9,11 +10,7 @@ const Navbar = () => {
                     <a href="#" className="flex items-center gap-2 font-bold tracking-tight text-white">
             <span
                 className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-blue-600 shadow-md">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path
-                  d="m7.5 4.27 9 5.15"/><path
-                  d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path
-                  d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+              <Package size={20} strokeWidth={2.5} />
             </span>
                         <span className="text-xl tracking-tighter uppercase font-black">LITE.SHOP</span>
                     </a>
@@ -47,26 +44,18 @@ const Navbar = () => {
                         <div className="relative hidden sm:block">
                             <input id="search-input" type="text" placeholder="Search products..."
                                    className="h-10 w-48 rounded-[0.75rem] bg-blue-500/30 pl-10 pr-4 text-xs font-medium text-blue-50 placeholder:text-blue-200/50 border border-blue-400/20 focus:bg-blue-500/50 focus:w-64 transition-all duration-300 outline-none"/>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                                 className="absolute left-3.5 top-3 text-blue-200">
-                                <circle cx="11" cy="11" r="8"/>
-                                <path d="m21 21-4.3-4.3"/>
-                            </svg>
+                            <Search
+                                size={16}
+                                strokeWidth={2.5}
+                                className="absolute left-3.5 top-3 text-blue-200"
+                            />
                         </div>
 
                         {/*Cart*/}
                         <button type="button"
                                 className="relative inline-flex h-10 w-10 items-center justify-center rounded-[0.75rem] bg-blue-500/30 text-blue-50 transition-all duration-200 hover:text-white hover:bg-blue-500/50 border border-blue-400/20"
                                 aria-label="Cart" title="Cart">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-                                <path d="M3 6h18"/>
-                                <path d="M16 10a4 4 0 0 1-8 0"/>
-                            </svg>
+                            <ShoppingBag size={20} strokeWidth={2} />
                             {/*Cart Count Badge*/}
                             <span id="cart-count"
                                   className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow-sm hidden">0</span>
@@ -76,26 +65,14 @@ const Navbar = () => {
                         <button type="button"
                                 className="inline-flex h-10 w-10 items-center justify-center rounded-[0.75rem] bg-blue-500/30 text-blue-50 transition-all duration-200 hover:text-white hover:bg-blue-500/50 border border-blue-400/20"
                                 aria-label="Account" title="Account">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
-                            </svg>
+                            <User size={20} strokeWidth={2} />
                         </button>
 
                         {/*Mobile Menu Button*/}
                         <button type="button"
                                 className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-[0.75rem] bg-blue-500/30 text-blue-50 transition-all duration-200 hover:text-white hover:bg-blue-500/50 border border-blue-400/20"
                                 aria-label="Menu" title="Menu">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                 stroke-linejoin="round">
-                                <line x1="4" x2="20" y1="12" y2="12"/>
-                                <line x1="4" x2="20" y1="6" y2="6"/>
-                                <line x1="4" x2="20" y1="18" y2="18"/>
-                            </svg>
+                            <Menu size={24} strokeWidth={2.5} />
                         </button>
                     </div>
                 </div>
