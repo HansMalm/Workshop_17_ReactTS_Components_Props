@@ -44,7 +44,10 @@ const ProductCard = ({ product }: ProductItemProps) => {
 
                 {/*Badge*/}
                 <span
-                    className="absolute left-3 top-3 px-3 py-1 text-[11px] font-bold rounded-full border border-rose-100/50 bg-rose-500/10 text-rose-600 backdrop-blur-md">Discount</span>
+                    className={`absolute left-3 top-3 px-3 py-1 text-[11px] font-bold rounded-full backdrop-blur-md ${product.badgeClass}`}
+                >
+                    {product.badge}
+                </span>
 
                 {/*Favorite*/}
                 <button type="button"

@@ -17,6 +17,9 @@ export type ProductItem = {
     oldPrice: string;
     price: string;
     stock: string;
+    badge: string;
+    badgeClass: string;
+
 };
 
 export type ProductItemProps = {

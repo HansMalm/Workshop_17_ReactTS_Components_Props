@@ -13,7 +13,9 @@ const ProductGrid = () => {
             rating: 4.9,
             oldPrice: "1,450 kr",
             price: "890 kr",
-            stock: "In Stock • Ships in 2 days"
+            stock: "In Stock • Ships in 2 days",
+            badge: "Discount",
+            badgeClass: "border border-rose-100/50 bg-rose-500/10 text-rose-600"
         },
         {
             id: 2,
@@ -23,7 +25,9 @@ const ProductGrid = () => {
             rating: 4.8,
             oldPrice: "",
             price: "1,200 kr",
-            stock: "Only 4 items left"
+            stock: "Only 4 items left",
+            badge: "Limited",
+            badgeClass: "border border-amber-100/50 bg-amber-100/50 bg-amber-500/10 text-amber-600"
         },
         {
             id: 3,
@@ -33,7 +37,9 @@ const ProductGrid = () => {
             rating: 4.7,
             oldPrice: "",
             price: "1,850 kr",
-            stock: "Back in stock next week"
+            stock: "Back in stock next week",
+            badge: "Sold Out",
+            badgeClass: "border border-slate-200/50 bg-slate-900/60 text-white"
         },
         {
             id: 4,
@@ -43,7 +49,9 @@ const ProductGrid = () => {
             rating: 4.5,
             oldPrice: "",
             price: "550 kr",
-            stock: "In Stock • ships in 1 day"
+            stock: "In Stock • ships in 1 day",
+            badge: "Popular",
+            badgeClass: "border border-blue-100/50 bg-blue-500/10 text-blue-600"
         },
         {
             id: 5,
@@ -53,17 +61,21 @@ const ProductGrid = () => {
             rating: 4.9,
             oldPrice: "2,200 kr",
             price: "1,690 kr",
-            stock: "In Stock • Ships in 2 days"
+            stock: "In Stock • Ships in 2 days",
+            badge: "Hot Deal",
+            badgeClass: "border border-rose-100/50 bg-rose-500/10 text-rose-600"
         },
         {
             id: 6,
             image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800",
             category: "Bags",
             name: "Tech Daypack",
-            rating: 0,
+            rating: 4.6,
             oldPrice: "",
-            price: "",
-            stock: ""
+            price: "990 kr",
+            stock: "In Stock • Ships in 1 day",
+            badge: "New Arrival",
+            badgeClass: "border border-amber-100/50 bg-amber-500/10 text-amber-600"
         }
     ];
 
