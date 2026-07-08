@@ -63,7 +63,7 @@ const Sidebar = () => {
                         type="range"
                         min="0"
                         max="1800"
-                        value="900"
+                        defaultValue="900"
                         className="w-full accent-blue-500"
                         aria-label="Price range"
                     />
