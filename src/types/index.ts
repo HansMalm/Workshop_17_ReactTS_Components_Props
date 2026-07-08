@@ -20,6 +20,12 @@ export type ProductItem = {
     badge: string;
     badgeClass: string;
 
+    imageClass?: string;
+    stockClass?: string;
+    priceClass?: string;
+    buttonClass?: string;
+    buttonText?: string;
+
 };
 
 export type ProductItemProps = {

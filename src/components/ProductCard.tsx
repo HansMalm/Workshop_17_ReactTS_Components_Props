@@ -8,7 +8,7 @@ const ProductCard = ({ product }: ProductItemProps) => {
     return (
         <article
             className="border border-slate-200 rounded-[1.25rem] bg-white p-3 transition-all duration-400 hover:border-blue-400 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 group">
-            <div className="relative overflow-hidden rounded-2xl bg-slate-100">
+            <div className={`relative overflow-hidden rounded-2xl bg-slate-100 ${product.imageClass ?? ""}`}>
                 <img
                     src={image} alt={name}
                     className="aspect-[4/5] w-full object-cover group-hover:scale-110 transition-transform duration-700"/>
@@ -30,7 +30,7 @@ const ProductCard = ({ product }: ProductItemProps) => {
                     </button>
                     <button type="button"
                             className="h-12 w-12 rounded-full bg-white text-slate-900 shadow-xl flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 hover:bg-blue-600 hover:text-white"
-                            aria-label="Add to cart">
+                            aria-label={product.buttonText ?? "Add to cart"}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                              viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2.5"
@@ -80,20 +80,28 @@ const ProductCard = ({ product }: ProductItemProps) => {
                 </div>
                 <h3 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                     {name}</h3>
-                <p className="text-[11px] font-medium text-slate-500">{stock}</p>
+                <p className={`text-[11px] ${product.stockClass ?? "font-medium text-slate-500"}`}>
+                    {stock}
+                </p>
 
                 <div className="flex items-center justify-between gap-3 pt-3">
                     <div className="flex flex-col">
                                             <span
-                                                className="text-[10px] text-slate-400 line-through font-medium leading-none">{oldPrice}</span>
-                        <span
-                            className="text-lg font-black text-slate-900 tracking-tight">{price}</span>
+                                                className="text-[10px] text-slate-400 line-through font-medium leading-none">
+                                                {oldPrice}
+                                            </span>
+                        <span className={`text-lg font-black tracking-tight ${product.priceClass ?? "text-slate-900"}`}>
+                            {price}
+                        </span>
                     </div>
 
                     <button type="button"
-                            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 text-xs font-bold text-white transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-200 active:scale-95 group/btn"
-                            aria-label="Add to cart">
-                        Add to cart
+                            className={`inline-flex h-10 items-center justify-center gap-2 rounded-xl px-5 text-xs font-bold transition-all duration-300 active:scale-95 group/btn ${
+                                product.buttonClass ?? "bg-slate-900 text-white hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-200"
+                            }`}
+                            aria-label={product.buttonText ?? "Add to cart"}
+                    >
+                        {product.buttonText ?? "Add to cart"}
                     </button>
                 </div>
             </div>

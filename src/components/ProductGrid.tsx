@@ -27,7 +27,8 @@ const ProductGrid = () => {
             price: "1,200 kr",
             stock: "Only 4 items left",
             badge: "Limited",
-            badgeClass: "border border-amber-100/50 bg-amber-100/50 bg-amber-500/10 text-amber-600"
+            badgeClass: "border border-amber-100/50 bg-amber-100/50 bg-amber-500/10 text-amber-600",
+            stockClass: "text-amber-600"
         },
         {
             id: 3,
@@ -39,7 +40,12 @@ const ProductGrid = () => {
             price: "1,850 kr",
             stock: "Back in stock next week",
             badge: "Sold Out",
-            badgeClass: "border border-slate-200/50 bg-slate-900/60 text-white"
+            badgeClass: "border border-slate-200/50 bg-slate-900/60 text-white",
+            imageClass: "grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500",
+            stockClass: "text-slate-400 italic font-bold",
+            priceClass: "bg-slate-100 text-slate-400",
+            buttonClass: "bg-slate-100 text-slate-400 cursor-not-allowed",
+            buttonText: "Notify me"
         },
         {
             id: 4,
@@ -68,11 +74,11 @@ const ProductGrid = () => {
         {
             id: 6,
             image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800",
-            category: "Bags",
+            category: "Accessories",
             name: "Tech Daypack",
             rating: 4.6,
             oldPrice: "",
-            price: "990 kr",
+            price: "1,100 kr",
             stock: "In Stock • Ships in 1 day",
             badge: "New Arrival",
             badgeClass: "border border-amber-100/50 bg-amber-500/10 text-amber-600"
