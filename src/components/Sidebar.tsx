@@ -1,3 +1,4 @@
+import {ChevronDown} from "lucide-react";
 
 
 const Sidebar = () => {
@@ -11,11 +12,7 @@ const Sidebar = () => {
                         <h2 id="filters-categories" className="text-sm font-bold text-slate-900">Categories</h2>
                         <button type="button"
                                 className="lg:hidden text-slate-400 hover:text-blue-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round">
-                                <path d="m6 9 6 6 6-6"/>
-                            </svg>
+                            <ChevronDown size={16} strokeWidth={2} />
                         </button>
                     </div>
 
@@ -23,7 +20,7 @@ const Sidebar = () => {
                         <label className="flex items-center gap-3 cursor-pointer select-none">
                             <input type="checkbox" value="all"
                                    className="category-filter h-[1.125rem] w-[1.125rem] rounded-[0.375rem] border border-slate-200 accent-blue-600 cursor-pointer"
-                                   checked/>
+                                   defaultChecked/>
                             <span className="flex-1 text-sm text-slate-700">All Products <span
                                 className="text-slate-400 font-normal">(124)</span></span>
                         </label>
