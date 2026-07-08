@@ -1,6 +1,6 @@
 # LITE.SHOP React Project
 
-**Live Demo:** https://your-username.github.io/Workshop13-ReactJS-Components-and-Props/
+**Live Demo:** https://HansMalm.github.io/Workshop13-ReactJS-Components-and-Props/
 
 ## Overview
 
