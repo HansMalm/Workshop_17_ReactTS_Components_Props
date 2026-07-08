@@ -1,5 +1,7 @@
 # LITE.SHOP React Project
 
+**Live Demo:** https://your-username.github.io/Workshop13-ReactJS-Components-and-Props/
+
 ## Overview
 
 This project is a React + TypeScript implementation of the LITE.SHOP product listing page.  
